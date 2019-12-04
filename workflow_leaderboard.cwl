@@ -150,7 +150,7 @@ steps:
         source: "#download_null_model_sc1/filepath"
       - id: nullmodel2
         source: "#download_null_model_sc2/filepath"
-      - id: round:
+      - id: round
         valueFrom: "leaderboard"
       - id: check_validation_finished 
         source: "#check_status/finished"

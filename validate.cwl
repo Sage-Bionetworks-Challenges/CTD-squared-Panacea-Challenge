@@ -1,6 +1,6 @@
 #!/usr/bin/env cwl-runner
 #
-# Validate SC1
+# Validate
 #
 cwlVersion: v1.0
 class: CommandLineTool

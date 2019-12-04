@@ -1,6 +1,6 @@
 #!/usr/bin/env cwl-runner
 #
-# Score SC1
+# Score
 #
 cwlVersion: v1.0
 class: CommandLineTool
