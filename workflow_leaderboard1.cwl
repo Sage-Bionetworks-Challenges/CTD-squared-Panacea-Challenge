@@ -1,6 +1,6 @@
 #!/usr/bin/env cwl-runner
 #
-# Workflow for leaderboard round
+# Workflow for leaderboard round (metric 1)
 # Inputs:
 #   submissionId: ID of the Synapse submission to process
 #   adminUploadSynId: ID of a folder accessible only to the submission queue administrator
