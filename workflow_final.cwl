@@ -150,6 +150,8 @@ steps:
         source: "#download_null_model_sc1/filepath"
       - id: nullmodel2
         source: "#download_null_model_sc2/filepath"
+      - id: round
+        valueFrom: "final"
       - id: check_validation_finished 
         source: "#check_status/finished"
     out:
