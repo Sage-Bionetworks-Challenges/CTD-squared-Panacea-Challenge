@@ -152,6 +152,8 @@ steps:
         source: "#download_null_model_sc2/filepath"
       - id: round
         valueFrom: "final"
+      - id: metric
+        valueFrom: "metric1"
       - id: check_validation_finished 
         source: "#check_status/finished"
     out:

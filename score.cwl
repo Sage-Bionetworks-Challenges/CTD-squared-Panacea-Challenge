@@ -8,7 +8,7 @@ baseCommand: [Rscript, /usr/local/bin/score.R]
 
 hints:
   DockerRequirement:
-    dockerPull: docker.synapse.org/syn20968332/scoring_harness:v1
+    dockerPull: docker.synapse.org/syn20968332/scoring_harness:v2
 
 inputs:
   - id: inputfile
@@ -20,6 +20,8 @@ inputs:
   - id: nullmodel2
     type: File
   - id: round
+    type: string
+  - id: metric
     type: string
   - id: check_validation_finished
     type: boolean?
@@ -37,6 +39,8 @@ arguments:
     prefix: --nullmodel2
   - valueFrom: $(inputs.round)
     prefix: --round
+  - valueFrom: $(inputs.metric)
+    prefix: --metric
 
 requirements:
   - class: InlineJavascriptRequirement

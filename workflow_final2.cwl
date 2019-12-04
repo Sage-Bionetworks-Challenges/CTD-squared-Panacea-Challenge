@@ -1,6 +1,6 @@
 #!/usr/bin/env cwl-runner
 #
-# Workflow for leaderboard round (metric 1)
+# Workflow for final round
 # Inputs:
 #   submissionId: ID of the Synapse submission to process
 #   adminUploadSynId: ID of a folder accessible only to the submission queue administrator
@@ -123,7 +123,7 @@ steps:
     run: https://raw.githubusercontent.com/Sage-Bionetworks/synapse-client-cwl-tools/v0.1/synapse-get-tool.cwl
     in:
       - id: synapseid
-        valueFrom: "syn21341653"
+        valueFrom: "syn21362374"
       - id: synapse_config
         source: "#synapseConfig"
     out:
@@ -133,7 +133,7 @@ steps:
     run: https://raw.githubusercontent.com/Sage-Bionetworks/synapse-client-cwl-tools/v0.1/synapse-get-tool.cwl
     in:
       - id: synapseid
-        valueFrom: "syn21341655"
+        valueFrom: "syn21362377"
       - id: synapse_config
         source: "#synapseConfig"
     out:
@@ -151,9 +151,9 @@ steps:
       - id: nullmodel2
         source: "#download_null_model_sc2/filepath"
       - id: round
-        valueFrom: "leaderboard"
+        valueFrom: "final"
       - id: metric
-        valueFrom: "metric1"
+        valueFrom: "metric2"
       - id: check_validation_finished 
         source: "#check_status/finished"
     out:

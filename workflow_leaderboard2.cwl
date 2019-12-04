@@ -123,7 +123,7 @@ steps:
     run: https://raw.githubusercontent.com/Sage-Bionetworks/synapse-client-cwl-tools/v0.1/synapse-get-tool.cwl
     in:
       - id: synapseid
-        valueFrom: "syn21341653"
+        valueFrom: "syn21362373"
       - id: synapse_config
         source: "#synapseConfig"
     out:
@@ -133,7 +133,7 @@ steps:
     run: https://raw.githubusercontent.com/Sage-Bionetworks/synapse-client-cwl-tools/v0.1/synapse-get-tool.cwl
     in:
       - id: synapseid
-        valueFrom: "syn21341655"
+        valueFrom: "syn21362375"
       - id: synapse_config
         source: "#synapseConfig"
     out:
@@ -152,6 +152,8 @@ steps:
         source: "#download_null_model_sc2/filepath"
       - id: round
         valueFrom: "leaderboard"
+      - id: metric
+        valueFrom: "metric2"
       - id: check_validation_finished 
         source: "#check_status/finished"
     out:
