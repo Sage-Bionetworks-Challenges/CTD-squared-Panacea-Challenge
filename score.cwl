@@ -8,16 +8,12 @@ baseCommand: [Rscript, /usr/local/bin/score.R]
 
 hints:
   DockerRequirement:
-    dockerPull: docker.synapse.org/syn20968332/scoring_harness:v2
+    dockerPull: docker.synapse.org/syn20968332/scoring_harness:v3
 
 inputs:
   - id: inputfile
     type: File
   - id: goldstandard
-    type: File
-  - id: nullmodel1
-    type: File
-  - id: nullmodel2
     type: File
   - id: round
     type: string
@@ -33,10 +29,6 @@ arguments:
     prefix: --goldstandard
   - valueFrom: results.json
     prefix: --results
-  - valueFrom: $(inputs.nullmodel1.path)
-    prefix: --nullmodel1
-  - valueFrom: $(inputs.nullmodel2.path)
-    prefix: --nullmodel2
   - valueFrom: $(inputs.round)
     prefix: --round
   - valueFrom: $(inputs.metric)

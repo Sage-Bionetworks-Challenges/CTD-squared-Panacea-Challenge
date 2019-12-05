@@ -119,26 +119,6 @@ steps:
     out:
       - id: filepath
 
-  download_null_model_sc1:
-    run: https://raw.githubusercontent.com/Sage-Bionetworks/synapse-client-cwl-tools/v0.1/synapse-get-tool.cwl
-    in:
-      - id: synapseid
-        valueFrom: "syn21362374"
-      - id: synapse_config
-        source: "#synapseConfig"
-    out:
-      - id: filepath
-
-  download_null_model_sc2:
-    run: https://raw.githubusercontent.com/Sage-Bionetworks/synapse-client-cwl-tools/v0.1/synapse-get-tool.cwl
-    in:
-      - id: synapseid
-        valueFrom: "syn21362377"
-      - id: synapse_config
-        source: "#synapseConfig"
-    out:
-      - id: filepath
-
   scoring:
     run: score.cwl
     in:
@@ -146,10 +126,6 @@ steps:
         source: "#download_submission/filepath"
       - id: goldstandard
         source: "#download_goldstandard/filepath"
-      - id: nullmodel1
-        source: "#download_null_model_sc1/filepath"
-      - id: nullmodel2
-        source: "#download_null_model_sc2/filepath"
       - id: round
         valueFrom: "final"
       - id: metric

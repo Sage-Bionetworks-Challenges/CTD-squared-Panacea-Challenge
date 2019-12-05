@@ -8,7 +8,7 @@ baseCommand: [Rscript, /usr/local/bin/validate.R]
 
 hints:
   DockerRequirement:
-    dockerPull: docker.synapse.org/syn20968332/scoring_harness:v2
+    dockerPull: docker.synapse.org/syn20968332/scoring_harness:v3
 
 inputs:
   - id: inputfile
