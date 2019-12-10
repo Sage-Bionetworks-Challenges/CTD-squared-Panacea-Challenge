@@ -17,8 +17,6 @@ inputs:
     type: File
   - id: round
     type: string
-  - id: metric
-    type: string
   - id: check_validation_finished
     type: boolean?
 
@@ -31,8 +29,6 @@ arguments:
     prefix: --results
   - valueFrom: $(inputs.round)
     prefix: --round
-  - valueFrom: $(inputs.metric)
-    prefix: --metric
 
 requirements:
   - class: InlineJavascriptRequirement

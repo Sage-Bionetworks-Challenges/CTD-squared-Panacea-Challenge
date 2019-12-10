@@ -1,6 +1,6 @@
 #!/usr/bin/env cwl-runner
 #
-# Workflow for leaderboard round (metric 1)
+# Workflow for leaderboard round (metric 2)
 # Inputs:
 #   submissionId: ID of the Synapse submission to process
 #   adminUploadSynId: ID of a folder accessible only to the submission queue administrator
@@ -128,8 +128,6 @@ steps:
         source: "#download_goldstandard/filepath"
       - id: round
         valueFrom: "leaderboard"
-      - id: metric
-        valueFrom: "metric1"
       - id: check_validation_finished 
         source: "#check_status/finished"
     out:
