@@ -17,7 +17,7 @@ inputs:
     type: File
 
 arguments:
-  - valueFrom: $(inputs.inputfile.path)
+  - valueFrom: $(inputs.inputfile)
     prefix: --inputfile
   - valueFrom: $(inputs.template.path)
     prefix: --template
