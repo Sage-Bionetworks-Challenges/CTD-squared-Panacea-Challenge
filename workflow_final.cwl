@@ -70,7 +70,7 @@ steps:
       - id: invalid_reasons
   
   validation_email:
-    run: https://raw.githubusercontent.com/Sage-Bionetworks/ChallengeWorkflowTemplates/v2.0/validate_email.cwl
+    run: https://raw.githubusercontent.com/Sage-Bionetworks/ChallengeWorkflowTemplates/v2.2/validate_email.cwl
     in:
       - id: submissionid
         source: "#submissionId"
@@ -80,7 +80,8 @@ steps:
         source: "#validation/status"
       - id: invalid_reasons
         source: "#validation/invalid_reasons"
-
+      - id: errors_only
+        default: true
     out: [finished]
 
   annotate_validation_with_output:
@@ -134,7 +135,7 @@ steps:
       - id: results
       
   score_email:
-    run: https://raw.githubusercontent.com/Sage-Bionetworks/ChallengeWorkflowTemplates/v2.0/score_email.cwl
+    run: score_email.cwl
     in:
       - id: submissionid
         source: "#submissionId"
@@ -142,6 +143,8 @@ steps:
         source: "#synapseConfig"
       - id: results
         source: "#scoring/results"
+      - id: private_annotations
+        default: [sc1_score, sc2_score]
     out: []
 
   annotate_submission_with_output:
