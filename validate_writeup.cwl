@@ -79,8 +79,8 @@ requirements:
             if e.response.status_code == 403:
               errors.append(f"Please make your private writeup public.")
 
-          result = {'errors': "\n".join(errors),
-                    'status': "INVALID" if errors else "VALIDATED"}
+          result = {'writeup_errors': "\n".join(errors),
+                    'writeup_status': "INVALID" if errors else "VALIDATED"}
             
           with open(args.results, "w") as out:
             out.write(json.dumps(result))
