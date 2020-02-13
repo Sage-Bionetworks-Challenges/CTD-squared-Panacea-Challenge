@@ -73,4 +73,15 @@ steps:
       - id: synapse_config
         source: "#synapseConfig"
     out: [finished]
+
+  check_status:
+    run: https://raw.githubusercontent.com/Sage-Bionetworks/ChallengeWorkflowTemplates/v2.0/check_status.cwl
+    in:
+      - id: status
+        source: "#validation/status"
+      - id: previous_annotation_finished
+        source: "#annotate_validation_with_output/finished"
+      - id: previous_email_finished
+        source: "#validation_email/finished"
+    out: [finished]
  
